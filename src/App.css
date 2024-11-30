@@ -1,0 +1,341 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes slide {
+  from {
+    transform: translateX(900px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes Fall {
+  from {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(5px);
+    opacity: 1;
+  }
+}
+
+@keyframes typingPause {
+  0% {
+    width: 0;
+  }
+  20% {
+    width: 0;
+  }
+
+  55% {
+    width: 100%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes slide2 {
+  from {
+    transform: translateX(-900px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
+/*
+at mid point of the animation, it wil be transparent so it gives that
+effect of like someones typing.
+
+*/
+@keyframes cursor {
+  50% {
+    border-color: transparent;
+  }
+}
+#headerContainer {
+  background-color: #1e1e1e;
+}
+
+body {
+  background-color: #1e1e1e;
+  color: white;
+}
+#containerForMedia {
+  width: 550px;
+}
+#linkinAnimation {
+  animation-name: Fall;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+  animation-delay: 1.2s;
+}
+#githubAnimation {
+  animation-name: Fall;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+  animation-delay: 1.3s;
+}
+#gmailAnimation {
+  animation-name: Fall;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+  animation-delay: 1.4s;
+}
+#homeAnimation {
+  animation-name: Fall;
+  animation-duration: 0.3s;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+  animation-delay: 1.7s;
+}
+#experienceAnimation {
+  animation-name: Fall;
+  animation-duration: 0.3s;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+  animation-delay: 1.8s;
+}
+#projectAnimation {
+  animation-name: Fall;
+  animation-duration: 0.3s;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+  animation-delay: 1.9s;
+}
+#nameAnimation {
+  animation-name: Fall;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+  animation-delay: 1.6s;
+}
+.BigText {
+  font-size: 4rem;
+  font-weight: bold;
+}
+
+#BigTextAnimation {
+  font-weight: bold;
+
+  color: white;
+  /*
+  ensures that the text inside an element will not wrap to the next line. Instead,
+   the text will continue on a single line, even if it overflows the containing
+    element.
+
+  */
+
+  white-space: nowrap;
+  border-right: 5px solid;
+  /*Content that goes beyond the element's dimensions will be clipped and not
+   visible. This means that any content extending beyond the element's borders will 
+   not be displayed.
+
+   */
+  overflow: hidden;
+
+  font-size: 4rem;
+  animation:
+    typingPause 2.5s steps(18) infinite alternate,
+    cursor 0.4s infinite alternate step-end;
+
+  /*
+  steps are like how they progres so like the animation have 18 steps to it.
+  in this case, should be based off of the amount of letters the text have
+  for it to be smooth.
+
+  step-end is like waiting for the step to be at its end and then go to next step
+  */
+  /*
+    infinite mean the animation continues forever. 
+    alternate basically means the animation alternate between the normal
+    and reverse direction with each iteration.
+    step-end
+
+
+    
+    Without alternate:     
+    After the animation completes its forward progress (from black to transparent), it
+    immediately jumps back to the starting point of the animation (black border).
+     This abrupt change can make it look like the border is disappearing and 
+     reappearing quickly.
+     So instead of doing that, it doesnt show the border twice in a row.
+
+    */
+}
+.imgcontainer {
+  height: 500px;
+}
+.imgproject {
+  height: 500px;
+  min-width: 600px;
+}
+.textcontainer {
+  max-height: 500px;
+}
+.transformgit {
+  position: absolute;
+  top: 356px;
+  left: 255px;
+}
+.transformmail {
+  position: absolute;
+  top: 380px;
+  left: 388px;
+}
+
+#setprojectimageAnimation {
+  animation-name: Fall;
+  animation-duration: 0.4s;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+  animation-delay: 0.3s;
+}
+#setprojecttext1Animation {
+  animation-name: slide;
+  animation-duration: 0.4s;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+  animation-delay: 0.7s;
+}
+#setprojecttext2Animation {
+  animation-name: slide;
+  animation-duration: 0.4s;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+  animation-delay: 0.9s;
+}
+#setprojecttext3Animation {
+  animation-name: slide;
+  animation-duration: 0.4s;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+  animation-delay: 1.1s;
+}
+#setprojecttext4Animation {
+  animation-name: slide;
+  animation-duration: 0.4s;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+  animation-delay: 1.3s;
+}
+#setelanguageused {
+  animation-name: Fall;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+  animation-delay: 1.3s;
+}
+#setelanguageused2 {
+  animation-name: Fall;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+  animation-delay: 1.5s;
+}
+#setelanguageused3 {
+  animation-name: Fall;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+  animation-delay: 1.7s;
+}
+#setelanguageused4 {
+  animation-name: Fall;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+  animation-delay: 1.9s;
+}
+#setelanguageused5 {
+  animation-name: Fall;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+  animation-delay: 2.1s;
+}
+
+#experiencetext {
+  animation-name: slide2;
+  animation-duration: 0.4s;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+  animation-delay: 0.3s;
+}
+#experiencetext2 {
+  animation-name: slide2;
+  animation-duration: 0.4s;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+  animation-delay: 0.5s;
+}
+#experiencetext3 {
+  animation-name: slide2;
+  animation-duration: 0.4s;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+  animation-delay: 0.7s;
+}
+#experiencetext4 {
+  animation-name: slide2;
+  animation-duration: 0.4s;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+  animation-delay: 0.9s;
+}
+
+.BigTextContainer {
+  min-width: 590px;
+}
+
+.opacity-0 {
+  opacity: 0;
+  transition: opacity 0.4s ease-in-out;
+}
+
+.opacity-100 {
+  opacity: 1;
+}
+/* Fade-in animation */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Slide-in animation */
+@keyframes slide-in {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Apply animations */
+.animate-fade-in {
+  animation: fade-in 0.5s ease-out forwards;
+}
+
+.animate-slide-in {
+  animation: slide-in 0.5s ease-out forwards;
+}
