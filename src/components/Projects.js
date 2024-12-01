@@ -40,7 +40,9 @@ const Projects = forwardRef((props, ref) => {
           isFullyVisible ? "opacity-100 animate-fade-in" : "opacity-0"
         }`}
       >
-        <img src={ToDo} className="imgproject rounded-lg" alt="ToDo" />
+        <a href="https://aronc500.github.io/ToDo-List/">
+          <img src={ToDo} className="imgproject rounded-lg" alt="ToDo" />
+        </a>
       </div>
       <div className="textcontainer flex flex-col gap-5 pr-20 pb-20 font-koulen text-4xl overflow-hidden">
         <div
