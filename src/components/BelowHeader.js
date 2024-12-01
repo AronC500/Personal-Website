@@ -2,6 +2,8 @@ import React, { useEffect, useState, useRef } from "react";
 import linkin from "../imgs/link.svg";
 import github from "../imgs/github.png";
 import gmail from "../imgs/gmail.jpg";
+import 'intersection-observer';
+
 
 const BelowHeader = () => {
   const [isVisible, setIsVisible] = useState(false);
