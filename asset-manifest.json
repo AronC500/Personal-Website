@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Personal-Website/static/css/main.64412820.css",
-    "main.js": "/Personal-Website/static/js/main.fe04209c.js",
+    "main.css": "/Personal-Website/static/css/main.fca431d8.css",
+    "main.js": "/Personal-Website/static/js/main.2bfeafb9.js",
     "static/media/ToDo.jpeg": "/Personal-Website/static/media/ToDo.6b7988ea299a31c9821a.jpeg",
     "static/media/tailwind.png": "/Personal-Website/static/media/tailwind.3549d9e451d7abb96934.png",
     "static/media/pngegg.png": "/Personal-Website/static/media/pngegg.9e2517dc2f32727cd3ac.png",
@@ -10,11 +10,11 @@
     "static/media/c++.png": "/Personal-Website/static/media/c++.1240ce157b70fb399c6c.png",
     "static/media/link.svg": "/Personal-Website/static/media/link.a236a02cbeb24525fd3bcf55fc6e41c6.svg",
     "index.html": "/Personal-Website/index.html",
-    "main.64412820.css.map": "/Personal-Website/static/css/main.64412820.css.map",
-    "main.fe04209c.js.map": "/Personal-Website/static/js/main.fe04209c.js.map"
+    "main.fca431d8.css.map": "/Personal-Website/static/css/main.fca431d8.css.map",
+    "main.2bfeafb9.js.map": "/Personal-Website/static/js/main.2bfeafb9.js.map"
   },
   "entrypoints": [
-    "static/css/main.64412820.css",
-    "static/js/main.fe04209c.js"
+    "static/css/main.fca431d8.css",
+    "static/js/main.2bfeafb9.js"
   ]
 }
