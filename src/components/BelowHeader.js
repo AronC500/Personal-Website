@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef, useMemo } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import linkin from "../imgs/link.svg";
 import github from "../imgs/github.png";
 import gmail from "../imgs/gmail.jpg";
@@ -13,29 +13,11 @@ const BelowHeader = () => {
   const [BigTextAnimation, setBigTextAnimation] = useState(false);
   const [currentText, setCurrentText] = useState("Software Engineer");
 
+  const texts = ["Software Engineer", "Fullstack Developer"];
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  // Memoize the texts array
-  const texts = useMemo(() => ["Software Engineer", "Fullstack Developer"], []);
-
-  // Interval for rotating text
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % texts.length);
-    }, 5000);
-
-    return () => clearInterval(interval);
-  }, [texts]);
-
-  // Update current text based on currentIndex
-  useEffect(() => {
-    setCurrentText(texts[currentIndex]);
-  }, [currentIndex, texts]);
-
-  // Intersection Observer to track visibility
-  useEffect(() => {
-    const ref = belowHeaderRef.current;
-
+    // Intersection Observer for visibility
     const observer = new IntersectionObserver(
       ([entry]) => {
         setIsVisible(entry.intersectionRatio >= 0.5); // 50% visibility or more
@@ -43,29 +25,44 @@ const BelowHeader = () => {
       { threshold: 0.5 }
     );
 
-    if (ref) {
-      observer.observe(ref);
+    if (belowHeaderRef.current) {
+      observer.observe(belowHeaderRef.current);
     }
 
     return () => {
-      if (ref) {
-        observer.unobserve(ref);
+      if (belowHeaderRef.current) {
+        observer.unobserve(belowHeaderRef.current);
       }
     };
   }, []);
 
   useEffect(() => {
+    // Text rotation
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % texts.length);
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, [texts.length]);
+
+  useEffect(() => {
+    setCurrentText(texts[currentIndex]);
+  }, [currentIndex]);
+
+  useEffect(() => {
+    setBigTextAnimation(true);
     // Trigger animations when visible
     if (isVisible) {
-      setBigTextAnimation(true);
       setlinkinAnimation(true);
       setgmailAnimation(true);
       setgithubAnimation(true);
     } else {
-      setBigTextAnimation(false);
       setlinkinAnimation(false);
       setgmailAnimation(false);
       setgithubAnimation(false);
+    }
+    return () => {
+        setBigTextAnimation(false);
     }
   }, [isVisible]);
 
@@ -83,7 +80,7 @@ const BelowHeader = () => {
         <div id="containerForMedia" className="flex">
           <a
             id={`${linkinAnimation ? "linkinAnimation" : ""}`}
-            href="https://www.linkedin.com/in/aron-chen-77656a2b4/"
+            href="https://github.com/AronC500"
             target="_blank"
             rel="noreferrer"
             className="opacity-0"
@@ -92,7 +89,7 @@ const BelowHeader = () => {
           </a>
           <a
             id={`${githubAnimation ? "githubAnimation" : ""}`}
-            href="https://github.com/AronC500"
+            href="https://www.linkedin.com/feed/"
             target="_blank"
             rel="noreferrer"
             className="transformgit opacity-0"
@@ -101,7 +98,7 @@ const BelowHeader = () => {
           </a>
           <a
             id={`${gmailAnimation ? "gmailAnimation" : ""}`}
-            href="mailto:aronchen500@gmail.com"
+            href="mailto:example@gmail.com"
             target="_blank"
             rel="noreferrer"
             className="transformmail opacity-0"
@@ -110,9 +107,7 @@ const BelowHeader = () => {
           </a>
         </div>
       </div>
-      <div className="min-w-96 h-80 ml-12 mt-28 border-white border-2">
-        Img Here
-      </div>
+      <div className="min-w-96 h-80 ml-12 mt-28"></div>
     </div>
   );
 };
